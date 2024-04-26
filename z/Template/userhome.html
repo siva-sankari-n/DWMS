@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: royalblue;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav {
+            text-align: right;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: lightblue;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .post {
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .post h2 {
+            color: royalblue;
+        }
+        
+        .post p {
+            line-height: 1.6;
+        }
+
+        .post img {
+            max-width: 700px;
+            margin-right: 20px;
+        }
+
+        .post:nth-child(even) .post-content {
+            order: 1;
+        }
+        
+        .post:nth-child(even) .post img {
+            order: 2;
+            margin-right: 0;
+            margin-left: 20px;
+        }
+        h2{
+          color: royalblue;
+        }
+    </style>
+</head>
+<body>
+  <form method="post" action="/userhome/" name="index">
+    <header>
+        <h1>Welcome</h1>
+        <nav>
+            <ul>
+             
+              <li><a class="nav-link scrollto" href="/complain"><span class="fa fa-trash"> Complain</span></a></li>
+              <li><a class="nav-link scrollto" href="/preview"><span class="fas fa-sign-out-alt">Preview Complain</span></a></li>
+              <li><a class="nav-link scrollto" href="/logout"><span class="fas fa-sign-out-alt">Logout</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>Waste Management activities</h3>
+    <div class="container">
+       
+            <div class="post">
+              <div class="post-content">
+                  <h2>Plastic Ban</h2>
+                  <p>The Government of Tamil Nadu is launching the "People's Campaign against throwaway plastics"
+                    announced during the Budget session 2021-2022 on 03.09.2021. This campaign will engage stakeholders
+                    from various sectors in each District, supported by the Tamil Nadu Pollution Control Board and 
+                    District Collectors. Strategies include impactful communication, effective monitoring, promoting 
+                    sustainable alternatives, and collaborating with industries for large-scale production of 
+                    eco-friendly alternatives.</p>
+              </div>
+              <img src="{% static 'img/plasticban.jpg' %}" alt="Placeholder Image">
+          </div>
+      
+      
+        <div class="post">
+            <div class="post-content">
+                <h2>Waste Segregation at Source</h2>
+                <p>Walajapet Municipality comprises of 24 wards with a population of 32001 as per 
+                  2011 census. The current population on 2018 is 42479. It consists of 10263 residential 
+                  households with 646 commercial establishments. The town is spread over an area of 2.64
+                  Sq. km.<br>
+                  The wet waste are collected at the Door step of all houses every day<br>
+                  The dry waste is being collected once in a week i.e Wednesday<br>
+                  The Domestic Hazardous wastes such as Napkin, Diaper are collected along 
+                  with wet waste in separate. <br>
+                  E Waste, other domestic hazardous waste and C&D waste collection is to be 
+                  practiced.<br>
+                  Animators are involved in imparting the practice of Source segregation
+                  among household through Behavioral change</p>
+            </div>
+            <img src="{% static 'img/waljapet.jpg' %}" alt="Placeholder Image">
+        </div>
+        <div class="post">
+          <div class="post-content">
+              <h2>Door to Door Garbage collection</h2>
+              <p>In Tamil Nadu, the Municipal Administration Department and organizations collect household waste through door-to-door collection. 
+                This is a significant initiative for overall management, finance, and environmental studies.<br>
+                Below are the collection and operation details:<br>
+                Waste Collection and Door-to-Door Collection: In all "135 municipalities", 
+                Battery Operated Vehicles (BOVs), Light Commercial Vehicles (LCVs), 
+                and other equipment are used to facilitate waste collection. 
+                This includes waste segregation at the source, household-to-household collection, 
+                transportation, and processing.</p>
+          </div>
+          <img src="{% static 'img/d-to-d.jpg' %}" alt="Placeholder Image">
+      </div>
+      <div class="post">
+        <div class="post-content">
+            <h2>Composting and Organic Waste Management</h2>
+            <p>Composting and organic waste management in Tamil Nadu are governed by acts such as the Tamil Nadu Local Bodies Act, 1920,
+              and regulations by the Tamil Nadu Pollution Control Board (TNPCB). The Solid Waste Management Rules, 2016, and the Tamil Nadu
+              Municipal Solid Waste Rules, 2000, outline guidelines for waste handling. Additionally, the Tamil Nadu Organic Waste Management 
+              Policy, 2019, promotes decentralized composting and vermiculture. Composting and vermicomposting guidelines issued by TNPCB 
+              provide technical assistance. Capacity-building programs and awareness campaigns are conducted to encourage community participation.
+              Overall, these initiatives aim to promote sustainable waste management practices and reduce environmental pollution.</p>
+        </div>
+        <img src="{% static 'img/compost.jpg' %}" alt="Placeholder Image">
+    </div>
+    <div class="post">
+      <div class="post-content">
+          <h2>Recycling Facilitates</h2>
+          <p>In Tamil Nadu, recycling facilities, overseen by the Tamil Nadu Pollution Control Board (TNPCB),
+            ensure compliance with environmental standards. Waste materials are collected, segregated, and 
+            processed based on type and quality. Advanced machinery and manual labor are utilized for 
+            sorting and cleaning, preparing materials for recycling. Baling or compacting may occur for 
+            efficient transportation to recycling plants or markets. Once transported, recyclables undergo 
+            reprocessing to create raw materials for manufacturing new products, closing the recycling loop.
+            Additionally, public awareness campaigns and educational programs promote recycling practices,
+            fostering sustainability. These actions collectively facilitate efficient recycling operations in Tamil Nadu,
+            conserving resources and reducing environmental impact.</p>
+      </div>
+      <img src="{% static 'img/recycle.jpg' %}" alt="Placeholder Image">
+  </div>
+  <div class="post">
+    <div class="post-content">
+        <h2>Awarness campaigns</h2>
+        <p>Awareness campaigns and community engagement in Tamil Nadu promote sustainable waste management 
+          practices and environmental conservation. These initiatives involve public education, school programs,
+          and community workshops to raise awareness about waste segregation and recycling. Door-to-door campaigns
+          provide guidance on waste management, while street plays and cultural events creatively convey messages
+          about environmental stewardship. Social media and online campaigns amplify the reach of awareness efforts. 
+          Partnerships with local businesses, NGOs, and government agencies enhance the effectiveness of these
+          initiatives, empowering communities to take collective action for a cleaner environment.</p>
+    </div>
+    <img src="{% static 'img/awarness.jpg' %}" alt="Placeholder Image">
+</div>
+<div class="post">
+  <div class="post-content">
+      <h2>NGO'S involvement</h2>
+      <p>Solid waste management in India is addressed significantly by NGOs, who play pivotal roles 
+        in various aspects. They create awareness about waste segregation and storage, conduct 
+        door-to-door waste collection services, and provide employment opportunities to marginalized 
+        communities. NGOs also handle e-waste management, coastal waste management, and advocate 
+        for responsible waste practices. Additionally, they offer technical assistance for waste management 
+        practitioners, engage in advocacy campaigns, and implement waste-to-energy projects. 
+        One inspiring example is Amutha, a Green Friend in Tamil Nadu, who has contributed to waste 
+        management and community development for nine years with HiH India.</p>
+  </div>
+  <img src="{% static 'img/ngos.jpg' %}" alt="Placeholder Image">
+</div>
+   
+    </div>
+  </form>
+</body>
+</html>

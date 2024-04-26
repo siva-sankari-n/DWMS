@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awarness</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: royalblue;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav {
+            text-align: right;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: lightblue;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .post {
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .post h2 {
+            color: royalblue;
+        }
+        
+        .post p {
+            line-height: 1.6;
+        }
+
+        .post img {
+            max-width: 300px;
+            margin-right: 20px;
+        }
+
+        .post:nth-child(even) .post-content {
+            order: 1;
+        }
+        
+        .post:nth-child(even) .post img {
+            order: 2;
+            margin-right: 0;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Awarness</h1>
+        <nav>
+            <ul>
+                <li><a href="/userhome">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="post">
+            <img src="{% static 'img/Medical-Waste.jpg' %}" alt="Placeholder Image">
+            <div class="post-content">
+                <h2>Post Title 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur eros vitae felis mollis vehicula. Proin hendrerit magna ac arcu tempus, nec scelerisque mauris scelerisque.</p>
+            </div>
+        </div>
+        <div class="post">
+            <div class="post-content">
+                <h2>Post Title 2</h2>
+                <p>Donec rutrum turpis nisi, vel tincidunt felis tincidunt a. Duis non eros a mi tincidunt posuere. Praesent non lorem id neque condimentum suscipit eu ac tortor.</p>
+            </div>
+            <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+        </div>
+        <!-- More posts can be added here -->
+    </div>
+</body>
+</html>

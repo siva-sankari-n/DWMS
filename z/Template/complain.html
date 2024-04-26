@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaint Form</title>
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      background-color:#4169E1 ;
+  }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    a{
+      font-size: 15px;
+      color:antiquewhite;
+  }
+
+  </style>
+</head>
+<body>
+
+
+  <a href="/userhome">Home</a>
+  <div class="container">
+    <h2>Complaint Form</h2>
+    <form action="/complain/" method="post" class="form-horizontal" name="complain">
+       {% csrf_token %}
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Your Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Your Email:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="email" name="email" placeholder="Enter your registered email" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" >Category:</label>
+        <div class="col-sm-10">
+          <input type="checkbox" name="wastetype[]" value="organic"> Organic
+          <input type="checkbox" name="wastetype[]" value="inorganic"> Inorganic
+          <input type="checkbox" name="wastetype[]" value="Household"> Household
+          <input type="checkbox" name="wastetype[]" value="mixed" id="mycheck" checked> All
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="complaint">Complaint:</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="complaint" name="complaint" placeholder="Enter your complaint" required></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="location">Location:</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="location" name="location" required>
+            <option value="">Select Location</option>
+            <option value="Town">Town</option>
+            <option value="Vannarpettai">Vannarpettai</option>
+            <option value="Junction">Junction</option>
+            <option value="NGO colony">NGO Colony</option>
+            <option value="Pettai">Pettai</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="complaint">Location Detail</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="locationd" name="locationd" placeholder="Enter your Location details..." required></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary">Submit Complaint</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

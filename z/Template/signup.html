@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Signup </title>
+        <style>
+            body{
+                margin:0;
+                padding:0;
+                background-color: #4682B4;
+            }
+            .container{
+                top:50%;
+                left:50%;
+                position:absolute;
+                transform:translate(-50%,-50%);
+            }
+            .card{
+                padding:60px 40px 50px 40px;
+                background:  rgba(43, 43, 50, 0.836);
+                border-radius: 10px;
+            }
+            #uname,#fname,#lname,#uem,#up,#ucp{
+                width: 200px;
+                border:none;
+                background: transparent;
+                border-bottom: 1px solid white;
+                padding:6px;
+                margin-bottom: 20px;
+                color:white;
+            }
+            #button{
+                border-radius: 20px;
+                padding:10px 20px;
+                background: navy;
+                color: azure;
+                margin-top: 20px;
+                border: none;
+                outline: none;
+                margin-left: 50px;
+            }
+            a{
+                font-size: 15px;
+                color:#8A2BE2;
+            }
+            h3{
+                color: antiquewhite;
+            }
+        </style>
+    </head>
+    <body>
+     {% for message in messages %}
+     <div class="alert alert {{message.tags}} alert-dismissible fade show" role="alert">
+     <strong>Message:</strong>{{message}}
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+     </button>
+     </div>
+     {% endfor %}
+
+      <form name="addbooks" method="post" action="../signup/">
+                 {% csrf_token %}
+        <div class ="container">
+            <div class="card">
+                <h3>Welcome to LMS</h3>
+
+                <input type="text" placeholder="Username" id ="uname" name="name" required><br>
+                <input type="text" placeholder="first name" id ="fname" name="fname" required><br>
+                <input type="text" placeholder="last name" id ="lname" name="lname" required><br>
+                <input type="text" placeholder="E-mail" id="uem" name="email" required><br>
+                <input type="password" placeholder="Password" id="up" name="pswd" required><br>
+                <input type="password" placeholder="Confirm Password" id="ucp" name="cpswd" required><br>
+                <button type="submit" id="button">Sign up</button><br>
+                Do you have account then<a href="/login">login here</a>
+            </div>
+        </div>
+      </form>
+    </body>
+</html>

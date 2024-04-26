@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaint Table</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #4169E1;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<form name="preview" action="/preview/" method="post">
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Complaint</th>
+    <th>Location</th>
+    <th>Location Detail</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for d in data %}
+  <tr>
+
+    <td>{{d.name}}</td>
+    <td>{{d.email}}</td>
+    <td>{{d.complaint}}</td>
+    <td>{{d.locat}}</td>
+    <td>{{d.locatd}}</td>
+    <td><a type="button" href="/update/{{d.id}}" class="btn btn-outline-primary">Edit</a></td>
+    <td><a type="button" href="/delete/{{d.id}}" class="btn btn-outline-danger">Delete</a></td>
+
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</form>
+<a href="/userhome">Back</a>
+</body>
+</html>
